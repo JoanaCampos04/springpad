@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<#--
+src/main/resources/templates/layouts/header.html
+Parte superior do template do site.
+Inclua no começo de cada página com:
+<#include "layouts/header.html">
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <#-- Injeta Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css">
     <#-- Injeta ícones do Bootstrap -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
-   <link rel="stylesheet" href="/css/style.css">
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
+    <#-- Injeta as folhas de estilo CSS do template -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
     <title>SpringPad</title>
 </head>
 
@@ -34,7 +40,7 @@
             <ul class="navbar-nav me-auto ps-3 ps-md-0">
                 <hr class="border-top mb-0 border-white">
                 <li class="nav-item"><a class="nav-link" href="/">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="/pad/novo">Novo</a></li>
+                <li class="nav-item is-logged"><a class="nav-link" href="/pad/novo">Novo</a></li>
 
                 <#-- Menu dropdown em "Sobre" -->
                 <li class="nav-item dropdown">
@@ -56,7 +62,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/login" id="userLoginOut">
                             <img src="/img/user.png" alt="Logue-se com o Google" class="rounded-circle mx-1">
-                            <span>Login</span>
+                            <span class="d-none">Login</span>
                         </a>
                     </li>
                 </ul>
@@ -65,7 +71,7 @@
                 <form class="d-flex p-1">
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Procurar...">
-                        <button class="btn btn-primary" type="button">Ok</button>
+                        <button class="btn btn-light" type="button"><i class="bi bi-search"></i></button>
                     </div>
                 </form>
 
@@ -74,6 +80,7 @@
     </div>
 </nav>
 <a></a>
-<main class="container flex-grow-1">
+<main class="container mt-5 p-4 bg-white d-flex flex-column flex-grow-1">
 
-    <div id="top" style="position: relative; height: 4.5rem;"></div>
+    <#-- Rack para funcionar o #top -->
+    <div id="top" style="position: relative; height: .1rem;"></div>

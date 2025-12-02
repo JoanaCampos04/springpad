@@ -8,6 +8,7 @@ package com.projetos.springpad.dto;
 import lombok.Value;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Value // Lombok para gerar construtor, getters, etc.
 public class PadSummaryDTO {
@@ -19,4 +20,7 @@ public class PadSummaryDTO {
     String ownerDisplayName;
     String ownerPhotoURL;
 
+    public String getCreatedAtFormatted() {
+        return createdAt.format(DateTimeFormatter.ofPattern("dd/MM/yyyy 'às' HH:mm"));
+    }
 }
