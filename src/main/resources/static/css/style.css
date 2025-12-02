@@ -51,3 +51,6 @@ footer a:hover {
     z-index: 1;
     content: "";
 }
+.pad-content {
+    font-family: consolas, monospace;
+}
